@@ -1,10 +1,10 @@
 namespace :deploy do
     task :mod_group do
-        on roles(:all) do
+        on roles :app do
             dirs = fetch(:mod_group_directories, [])
             dirs.each do |dir|
-                execute "chgrp #{fetch(:group)} #{shared_path}/#{dir} && chmod g+w #{shared_path}/#{dir}"
-                info "Group of #{shared_path}/#{dir} changed to #{fetch(:group)} and writable bit set"
+                execute "chgrp #{fetch(:mod_group)} #{shared_path}/#{dir} && chmod g+w #{shared_path}/#{dir}"
+                info "Group of #{shared_path}/#{dir} changed to #{fetch(:mod_group)} and writable bit set"
             end
         end
     end
