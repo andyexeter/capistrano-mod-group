@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name          = 'capistrano-mod-group'
-  spec.version       = '0.1.2'
+  spec.version       = '0.1.3'
   spec.authors       = ['Andy Palmer']
   spec.email         = ['andy@andypalmer.me']
   spec.description   = %q{Change group of shared files/folders and add group writable bit}
