@@ -28,21 +28,13 @@ Require in `Capfile` to use the default task:
 require 'capistrano/mod_group'
 ```
 
-Tarballs are unpacked during `deploy:updating` and created during `deploy:finishing` as part of Capistrano's default deploy
-
-Configurable options:
-
-```ruby
-set :mod_group, []                       # default
-set :tar_location, "tarballs"            # default
-set :tar_unpack_flags, "xf"              # default
-set :tar_create_flags, "cf"              # default
-```
-
 ## Example
+
 ```ruby
-# Create and unpack tarballs for these directories between releases
-set :mod_group, ['vendor', 'node_modules', 'web/assets']
+set :mod_group, 'apache'
+set :mod_directories, [
+    'web/cache'
+]
 ```
 
 ## License
